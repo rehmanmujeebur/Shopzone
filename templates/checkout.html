@@ -6,32 +6,32 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/checkout.css') }}">
 {% endblock %}
 
-{% block js %}
+{# {% block js %}
     <script src="https://js.stripe.com/v3/"></script>
-{% endblock %}
+{% endblock %} #}
 
 {% block content %}
 <div class="checkout-container">
     <div class="checkout-form">
         <h1>Checkout</h1>
         
-        <form id="payment-form">
+        <form id="payment-form" method="POST" action="{{ url_for('cart.order_confirmation', order_id=1) }}">
             <!-- Contact Info -->
             <div class="form-section">
                 <h2>Contact Information</h2>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" id="first_name" required>
+                        <input type="text" id="first_name" name="first_name" required>
                     </div>
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
-                        <input type="text" id="last_name" required>
+                        <input type="text" id="last_name" name="last_name" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
             </div>
 
@@ -40,32 +40,32 @@
                 <h2>Shipping Address</h2>
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input type="text" id="address" required>
+                    <input type="text" id="address" name="address" required>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="city">City</label>
-                        <input type="text" id="city" required>
+                        <input type="text" id="city" name="city" required>
                     </div>
                     <div class="form-group">
                         <label for="postal_code">Postal Code</label>
-                        <input type="text" id="postal_code" required>
+                        <input type="text" id="postal_code" name="postal_code" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="country">Country</label>
-                    <input type="text" id="country" required>
+                    <input type="text" id="country" name="country" required>
                 </div>
             </div>
 
-            <!-- Payment -->
+            <!-- Stripe Payment Section (Commented Out) -->
+            {#
             <div class="form-section">
                 <h2>Payment Information</h2>
-                <div id="card-element">
-                    <!-- Stripe Card Element will appear here -->
-                </div>
+                <div id="card-element"></div>
                 <div id="card-errors" role="alert"></div>
             </div>
+            #}
 
             <!-- Summary -->
             <div class="order-summary">
@@ -76,13 +76,14 @@
                 </div>
                 <input type="hidden" id="total" value="{{ total }}">
                 <button id="submit-button" type="submit">
-                    Pay ${{ "%.2f"|format(total) }}
+                    Place Order (No Payment)
                 </button>
             </div>
         </form>
     </div>
 </div>
 
+{# Stripe JS (Commented Out)
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const stripe = Stripe("{{ stripe_public_key }}");
@@ -95,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     form.addEventListener("submit", async function (e) {
         e.preventDefault();
-
         submitButton.disabled = true;
 
         const { paymentMethod, error } = await stripe.createPaymentMethod({
@@ -138,4 +138,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+#}
 {% endblock %}
