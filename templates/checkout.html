@@ -4,11 +4,8 @@
 
 {% block css %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/checkout.css') }}">
-{% endblock %}
 
-{# {% block js %}
-<!--     <script src="https://js.stripe.com/v3/"></script> -->
-{% endblock %} #}
+{% endblock %}
 
 {% block content %}
 <div class="checkout-container">
@@ -98,10 +95,10 @@
         e.preventDefault();
         submitButton.disabled = true;
 
-        const { paymentMethod, error } = await stripe.createPaymentMethod({
-            type: 'card',
-            card: cardElement
-        });
+        // const { paymentMethod, error } = await stripe.createPaymentMethod({
+        //     type: 'card',
+        //     card: cardElement
+        // });
 
         if (error) {
             document.getElementById("card-errors").textContent = error.message;
@@ -136,7 +133,6 @@
             submitButton.disabled = false;
         }
     });
-});
 </script>
 #}
 {% endblock %}
