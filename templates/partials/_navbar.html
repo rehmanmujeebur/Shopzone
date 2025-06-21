@@ -1,0 +1,29 @@
+<header>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                
+                <a href="{{ url_for('home') }}">ShopZone</a>
+                
+            </div>
+
+            <button class="mobile-menu-button" aria-label="Toggle Menu">☰</button>
+
+            <div class="mobile-menu hidden">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('products.products') }}">Products</a></li>
+                    <li><a href="{{ url_for('cart.view_cart') }}">Cart</a></li>
+
+                    {% if current_user.is_authenticated %}
+                        <li><a href="#">{{ current_user.username }}</a></li>
+                        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                        <li><a href="{{ url_for('auth.register') }}">SignUp</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

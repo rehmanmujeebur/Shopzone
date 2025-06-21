@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}ShopZone - Home{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="hero">
+         <img src="{{ url_for('static', filename='images/logos/hero-bg1.jpg') }}" alt="Hero Background" class="hero-img">
+        <div class="hero-content">
+            <h1>Welcome to ShopZone</h1>
+            <p>Discover amazing products at unbeatable prices</p>
+          <a href="{{ url_for('products.products') }}" class="btn btn-primary">Shop Now</a>
+
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            {% for product in featured_products %}
+                <div class="product-card">
+                    <a href="{{ url_for('products.product_detail', product_id=product.id) }}">
+                        <img src="{{ product.image_url or url_for('static', filename='images/products/default.jpg') }}" 
+                             alt="{{ product.name }}" class="product-image">
+                        <h3>{{ product.name }}</h3>
+                        <p class="price">${{ "%.2f"|format(product.price) }}</p>
+                    </a>
+                    <form action="{{ url_for('cart.add_to_cart') }}" method="POST">
+                        <input type="hidden" name="product_id" value="{{ product.id }}">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" class="btn btn-add-to-cart">Add to Cart</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="benefit-item">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>Free Shipping</h3>
+            <p>On orders over $50</p>
+        </div>
+        <div class="benefit-item">
+            <i class="fas fa-undo"></i>
+            <h3>Easy Returns</h3>
+            <p>30-day return policy</p>
+        </div>
+        <div class="benefit-item">
+            <i class="fas fa-lock"></i>
+            <h3>Secure Checkout</h3>
+            <p>100% secure payment</p>
+        </div>
+    </section>
+    <form action="{{ url_for('cart.add_to_cart', product_id=1) }}" method="POST">
+    <button type="submit">Add to Cart</button>
+</form>
+
+{% endblock %}

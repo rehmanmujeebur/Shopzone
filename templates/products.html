@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Products - ShopZone{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="products-container">
+    <h1>Our Products</h1>
+
+    <!-- Filter & Search -->
+    <form method="get" class="filter-form" id="filterForm">
+        <input
+            type="text"
+            name="search"
+            id="searchInput"
+            placeholder="Search for products..."
+            value="{{ search_query }}"
+            style="padding: 10px; width: 250px;"
+        />
+
+        <div class="filter-group">
+            <label for="category">Category:</label>
+            <select name="category" id="category" onchange="document.getElementById('filterForm').submit()">
+                <option value="">All</option>
+                {% for cat in categories %}
+                <option value="{{ cat }}" {% if selected_category == cat %}selected{% endif %}>{{ cat }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="sort">Sort by:</label>
+            <select name="sort" id="sort" onchange="document.getElementById('filterForm').submit()">
+                <option value="">Default</option>
+                <option value="asc" {% if selected_sort == 'asc' %}selected{% endif %}>Price: Low to High</option>
+                <option value="desc" {% if selected_sort == 'desc' %}selected{% endif %}>Price: High to Low</option>
+            </select>
+        </div>
+    </form>
+
+    <!-- Product Cards -->
+    <div class="product-grid">
+        {% for product in products %}
+        <div class="product-card">
+            {% if product.discount %}
+            <div class="discount-badge">{{ product.discount }}% OFF</div>
+            {% endif %}
+            <a href="{{ url_for('products.product_detail', product_id=product.id) }}">
+                <img src="{{ product.image_url or url_for('static', filename='images/products/default.jpg') }}"
+                    alt="{{ product.name }}">
+                <div class="product-info">
+                    <h2>{{ product.name }}</h2>
+                    <p class="price">${{ "%.2f"|format(product.price) }}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- JS for typing delay -->
+<script>
+    let timer;
+    const input = document.getElementById('searchInput');
+    const form = document.getElementById('filterForm');
+
+    // Auto-submit after typing pause
+    input.addEventListener('input', () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            const searchText = input.value;
+            localStorage.setItem('searchText', searchText); // Save to localStorage
+            form.submit();
+        }, 1000); // submit after 1 second of no typing
+    });
+
+    // Restore input text and focus after page reload
+    window.addEventListener('DOMContentLoaded', () => {
+        const saved = localStorage.getItem('searchText');
+        if (saved) {
+            input.value = saved;
+            input.focus();
+            input.setSelectionRange(saved.length, saved.length); // Move cursor to end
+            localStorage.removeItem('searchText'); // Clear it after setting
+        }
+    });
+</script>
+
+
+{% endblock %}

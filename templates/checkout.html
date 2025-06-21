@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Checkout - ShopZone{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/checkout.css') }}">
+{% endblock %}
+
+{% block js %}
+    <script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+
+{% block content %}
+<div class="checkout-container">
+    <div class="checkout-form">
+        <h1>Checkout</h1>
+        
+        <form id="payment-form">
+            <!-- Contact Info -->
+            <div class="form-section">
+                <h2>Contact Information</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="form-section">
+                <h2>Shipping Address</h2>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postal_code">Postal Code</label>
+                        <input type="text" id="postal_code" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" required>
+                </div>
+            </div>
+
+            <!-- Payment -->
+            <div class="form-section">
+                <h2>Payment Information</h2>
+                <div id="card-element">
+                    <!-- Stripe Card Element will appear here -->
+                </div>
+                <div id="card-errors" role="alert"></div>
+            </div>
+
+            <!-- Summary -->
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Total:</span>
+                    <span>${{ "%.2f"|format(total) }}</span>
+                </div>
+                <input type="hidden" id="total" value="{{ total }}">
+                <button id="submit-button" type="submit">
+                    Pay ${{ "%.2f"|format(total) }}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const stripe = Stripe("{{ stripe_public_key }}");
+    const elements = stripe.elements();
+    const cardElement = elements.create("card");
+    cardElement.mount("#card-element");
+
+    const form = document.getElementById("payment-form");
+    const submitButton = document.getElementById("submit-button");
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        submitButton.disabled = true;
+
+        const { paymentMethod, error } = await stripe.createPaymentMethod({
+            type: 'card',
+            card: cardElement
+        });
+
+        if (error) {
+            document.getElementById("card-errors").textContent = error.message;
+            submitButton.disabled = false;
+            return;
+        }
+
+        const data = {
+            first_name: document.getElementById("first_name").value,
+            last_name: document.getElementById("last_name").value,
+            email: document.getElementById("email").value,
+            address: document.getElementById("address").value,
+            city: document.getElementById("city").value,
+            postal_code: document.getElementById("postal_code").value,
+            country: document.getElementById("country").value,
+            payment_method_id: paymentMethod.id,
+            total: document.getElementById("total").value
+        };
+
+        const response = await fetch("/cart/create-payment", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            window.location.href = `/cart/order-confirmation/${result.order_id}`;
+        } else {
+            alert("Payment failed: " + result.error);
+            submitButton.disabled = false;
+        }
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }} - ShopZone{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product_details.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="product-detail-container">
+    <div class="product-images">
+        <div class="main-image">
+            <img src="{{ product.image_url }}" alt="{{ product.name }}">
+        </div>
+        {% if product.additional_images %}
+        <div class="thumbnail-images">
+            {% for image in product.additional_images %}
+            <img src="{{ image }}" alt="Additional image {{ loop.index }}">
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="product-info">
+        <h1>{{ product.name }}</h1>
+
+        <div class="price-section">
+            {% if product.discount_price %}
+                <p class="original-price">₹{{ "%.2f"|format(product.price) }}</p>
+                <p class="discounted-price">₹{{ "%.2f"|format(product.discount_price) }}</p>
+            {% else %}
+                <p class="price">₹{{ "%.2f"|format(product.price) }}</p>
+            {% endif %}
+        </div>
+
+        <div class="product-meta">
+            <span class="stock {% if product.stock > 0 %}in-stock{% else %}out-of-stock{% endif %}">
+                {% if product.stock > 0 %}
+                    In Stock ({{ product.stock }} available)
+                {% else %}
+                    Out of Stock
+                {% endif %}
+            </span>
+            <span class="rating">
+                Rating: {{ product.rating }}/5 ({{ product.reviews }} reviews)
+            </span>
+        </div>
+
+        <div class="product-description">
+            <h3>Description</h3>
+            <p>{{ product.description }}</p>
+        </div>
+
+        <div class="product-specs">
+            <h3>Product Details</h3>
+            <ul>
+                <li><strong>Category:</strong> {{ product.category }}</li>
+                <li><strong>Brand:</strong> {{ product.brand }}</li>
+                <li><strong>Color:</strong> {{ product.color }}</li>
+                <li><strong>Size:</strong> {{ product.size|join(', ') if product.size else 'N/A' }}</li>
+                <li><strong>Material:</strong> {{ product.material }}</li>
+                {% if product.specifications %}
+                    {% for key, value in product.specifications.__dict__.items() %}
+                        {% if value != 'N/A' %}
+                        <li><strong>{{ key|replace('_', ' ')|title }}:</strong> {{ value }}</li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="shipping-info">
+            <h3>Shipping Information</h3>
+            {% if product.shipping_info %}
+                <p>Delivery: {{ product.shipping_info.delivery_time }}</p>
+                <p>Shipping: {{ product.shipping_info.shipping_charge }}</p>
+            {% else %}
+                <p>No shipping information available</p>
+            {% endif %}
+        </div>
+
+        {% if product.tags %}
+        <div class="product-tags">
+            {% for tag in product.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if product.stock > 0 %}
+        <!-- ✅ Use form to trigger POST for adding to cart -->
+        <form class="add-to-cart-form" action="{{ url_for('cart.add_to_cart', product_id=product.id) }}" method="POST">
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="quantity" id="quantity" min="1" max="{{ product.stock }}" value="1" required>
+            </div>
+            <button type="submit" class="btn-primary">Add to Cart</button>
+        </form>
+        {% else %}
+        <button class="btn-primary" disabled>Out of Stock</button>
+        {% endif %}
+    </div>
+</div>
+
+{% if related_products %}
+<section class="related-products">
+    <h2>You May Also Like</h2>
+    <div class="product-grid">
+        {% for p in related_products %}
+        <div class="product-card">
+            <a href="{{ url_for('products.product_detail', product_id=p.id) }}">
+                <img src="{{ p.image_url }}" alt="{{ p.name }}" class="product-image">
+                <h3>{{ p.name }}</h3>
+                <p class="price">₹{{ "%.2f"|format(p.price) }}</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,170 @@
+:root {
+    --dark-color: #333;
+    --danger-color: #e74c3c;
+}
+
+.checkout-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.checkout-form h1, .order-summary h2 {
+    margin-bottom: 30px;
+    color: var(--dark-color);
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card-element {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+}
+
+.card-errors {
+    color: var(--danger-color);
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.order-summary {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    align-self: start;
+}
+
+.order-items {
+    margin-bottom: 20px;
+}
+
+.order-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.item-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-name {
+    color: #555;
+}
+
+.item-price {
+    font-weight: bold;
+}
+
+.order-totals {
+    margin-top: 20px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.grand-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- ORDER SUMMARY --- */
+.order-summary {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.order-summary h2 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.summary-row span:last-child {
+    font-weight: 600;
+}
+
+/* --- SUBMIT BUTTON --- */
+#submit-button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit-button:hover {
+    background-color: #0056b3;
+}
