@@ -3,7 +3,7 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_migrate import Migrate
-from models import db, User
+from models import db, User, Product  # ✅ Include Product model
 from config import Config
 import os
 from dotenv import load_dotenv
@@ -18,11 +18,12 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    # Set SQLite path (adjusted for Replit or Linux paths)
-    db_path = os.getenv('DATABASE_URI', 'sqlite:///shopzone.db')  # Default fallback
+    # Set SQLite DB path
+    db_path = os.getenv('DATABASE_URI', 'sqlite:///shopzone.db')
     app.config['SQLALCHEMY_DATABASE_URI'] = db_path
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    # Create database directory if needed
+
+    # Create db directory if needed
     if db_path.startswith("sqlite:///"):
         db_file = db_path.replace("sqlite:///", "")
         db_dir = os.path.dirname(db_file)
@@ -33,6 +34,7 @@ def create_app():
     Migrate(app, db)
     login_manager.init_app(app)
 
+    # Register blueprints
     from auth.routes import auth_bp
     from products.routes import products_bp
     from cart.routes import cart_bp
@@ -41,15 +43,17 @@ def create_app():
     app.register_blueprint(products_bp, url_prefix='/products')
     app.register_blueprint(cart_bp, url_prefix='/cart')
 
+    # Home route with featured products
     @app.route('/')
     def home():
-        return render_template('index.html')
+        featured_products = Product.query.filter_by(is_featured=True).all()
+        return render_template('index.html', featured_products=featured_products)
 
     return app
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    return db.session.get(User, int(user_id))  # ✅ Modern SQLAlchemy method
 
 # Run server
 if __name__ == '__main__':

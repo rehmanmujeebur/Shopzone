@@ -45,6 +45,7 @@ class Product(db.Model):
     return_policy = db.Column(db.String(255))
     warranty = db.Column(db.String(255))
     available = db.Column(db.Boolean, default=True)
+    is_featured = db.Column(db.Boolean, default=False)
     tags = db.Column(db.PickleType)  # list
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 

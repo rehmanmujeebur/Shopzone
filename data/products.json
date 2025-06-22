@@ -10,16 +10,10 @@
     "category": "Apparel",
     "brand": "GenericBrand",
     "color": "Red",
-    "size": [
-      "One Size"
-    ],
+    "size": ["One Size"],
     "material": "Mixed",
     "rating": 4.5,
     "reviews": 20,
-    "additional_images": [
-      "https://your-bucket-name.s3.amazonaws.com/images/products/red-shirt-1.jpg",
-      "https://your-bucket-name.s3.amazonaws.com/images/products/red-shirt-2.jpg"
-    ],
     "specifications": {
       "wash_care": "Hand wash recommended",
       "fit": "Standard",
@@ -33,10 +27,8 @@
     "return_policy": "10-day return policy",
     "warranty": "1 year limited warranty",
     "available": true,
-    "tags": [
-      "new",
-      "bestseller"
-    ]
+    "tags": ["new", "bestseller"],
+    "is_featured": false
   },
   {
     "id": 2,
@@ -49,16 +41,10 @@
     "category": "Apparel",
     "brand": "GenericBrand",
     "color": "Blue",
-    "size": [
-      "One Size"
-    ],
+    "size": ["One Size"],
     "material": "Mixed",
     "rating": 4.5,
     "reviews": 20,
-    "additional_images": [
-      "https://your-bucket-name.s3.amazonaws.com/images/products/blue-jeans-1.jpg",
-      "https://your-bucket-name.s3.amazonaws.com/images/products/blue-jeans-2.jpg"
-    ],
     "specifications": {
       "wash_care": "Hand wash recommended",
       "fit": "Standard",
@@ -72,10 +58,8 @@
     "return_policy": "10-day return policy",
     "warranty": "1 year limited warranty",
     "available": true,
-    "tags": [
-      "new",
-      "bestseller"
-    ]
+    "tags": ["new", "bestseller"],
+    "is_featured": false
   },
   {
     "id": 3,
@@ -88,16 +72,10 @@
     "category": "Apparel",
     "brand": "GenericBrand",
     "color": "Black",
-    "size": [
-      "One Size"
-    ],
+    "size": ["One Size"],
     "material": "Mixed",
     "rating": 4.5,
     "reviews": 20,
-    "additional_images": [
-      "https://your-bucket-name.s3.amazonaws.com/images/products/black-hoodie-1.jpg",
-      "https://your-bucket-name.s3.amazonaws.com/images/products/black-hoodie-2.jpg"
-    ],
     "specifications": {
       "wash_care": "Hand wash recommended",
       "fit": "Standard",
@@ -111,12 +89,10 @@
     "return_policy": "10-day return policy",
     "warranty": "1 year limited warranty",
     "available": true,
-    "tags": [
-      "new",
-      "bestseller"
-    ]
+    "tags": ["new", "bestseller"],
+    "is_featured": false
   },
-  {
+    {
     "id": 4,
     "name": "White Sneakers",
     "price": 59.99,
@@ -127,16 +103,10 @@
     "category": "Accessories",
     "brand": "GenericBrand",
     "color": "White",
-    "size": [
-      "One Size"
-    ],
+    "size": ["One Size"],
     "material": "Mixed",
     "rating": 4.5,
     "reviews": 20,
-    "additional_images": [
-      "https://your-bucket-name.s3.amazonaws.com/images/products/white-sneakers-1.jpg",
-      "https://your-bucket-name.s3.amazonaws.com/images/products/white-sneakers-2.jpg"
-    ],
     "specifications": {
       "wash_care": "Hand wash recommended",
       "fit": "Standard",
@@ -150,10 +120,8 @@
     "return_policy": "10-day return policy",
     "warranty": "1 year limited warranty",
     "available": true,
-    "tags": [
-      "new",
-      "bestseller"
-    ]
+    "tags": ["new", "bestseller"],
+    "is_featured": false
   },
   {
     "id": 5,
@@ -166,16 +134,10 @@
     "category": "Accessories",
     "brand": "GenericBrand",
     "color": "Leather",
-    "size": [
-      "One Size"
-    ],
+    "size": ["One Size"],
     "material": "Mixed",
     "rating": 4.5,
     "reviews": 20,
-    "additional_images": [
-      "https://your-bucket-name.s3.amazonaws.com/images/products/leather-wallet-1.jpg",
-      "https://your-bucket-name.s3.amazonaws.com/images/products/leather-wallet-2.jpg"
-    ],
     "specifications": {
       "wash_care": "Hand wash recommended",
       "fit": "Standard",
@@ -189,10 +151,8 @@
     "return_policy": "10-day return policy",
     "warranty": "1 year limited warranty",
     "available": true,
-    "tags": [
-      "new",
-      "bestseller"
-    ]
+    "tags": ["new", "bestseller"],
+    "is_featured": false
   },
   {
     "id": 6,
@@ -205,16 +165,10 @@
     "category": "Accessories",
     "brand": "GenericBrand",
     "color": "Classic",
-    "size": [
-      "One Size"
-    ],
+    "size": ["One Size"],
     "material": "Mixed",
     "rating": 4.5,
     "reviews": 20,
-    "additional_images": [
-      "https://your-bucket-name.s3.amazonaws.com/images/products/classic-watch-1.jpg",
-      "https://your-bucket-name.s3.amazonaws.com/images/products/classic-watch-2.jpg"
-    ],
     "specifications": {
       "wash_care": "Hand wash recommended",
       "fit": "Standard",
@@ -228,32 +182,24 @@
     "return_policy": "10-day return policy",
     "warranty": "1 year limited warranty",
     "available": true,
-    "tags": [
-      "new",
-      "bestseller"
-    ]
+    "tags": ["new", "bestseller"],
+    "is_featured": false
   },
   {
     "id": 7,
     "name": "Cotton Cap",
     "price": 14.99,
     "stock": 10,
-   "image_url": "/static/images/cap.jpg",
+    "image_url": "/static/images/cap.jpg",
     "description": "High quality and stylish product for everyday use.",
     "discount_price": 12.74,
     "category": "Accessories",
     "brand": "GenericBrand",
     "color": "Cotton",
-    "size": [
-      "One Size"
-    ],
+    "size": ["One Size"],
     "material": "Mixed",
     "rating": 4.5,
     "reviews": 20,
-    "additional_images": [
-      "https://your-bucket-name.s3.amazonaws.com/images/products/cotton-cap-1.jpg",
-      "https://your-bucket-name.s3.amazonaws.com/images/products/cotton-cap-2.jpg"
-    ],
     "specifications": {
       "wash_care": "Hand wash recommended",
       "fit": "Standard",
@@ -267,10 +213,8 @@
     "return_policy": "10-day return policy",
     "warranty": "1 year limited warranty",
     "available": true,
-    "tags": [
-      "new",
-      "bestseller"
-    ]
+    "tags": ["new", "bestseller"],
+    "is_featured": false
   },
   {
     "id": 8,
@@ -283,16 +227,10 @@
     "category": "Accessories",
     "brand": "GenericBrand",
     "color": "Canvas",
-    "size": [
-      "One Size"
-    ],
+    "size": ["One Size"],
     "material": "Mixed",
     "rating": 4.5,
     "reviews": 20,
-    "additional_images": [
-      "https://your-bucket-name.s3.amazonaws.com/images/products/canvas-backpack-1.jpg",
-      "https://your-bucket-name.s3.amazonaws.com/images/products/canvas-backpack-2.jpg"
-    ],
     "specifications": {
       "wash_care": "Hand wash recommended",
       "fit": "Standard",
@@ -306,414 +244,383 @@
     "return_policy": "10-day return policy",
     "warranty": "1 year limited warranty",
     "available": true,
-    "tags": [
-      "new",
-      "bestseller"
-    ]
+    "tags": ["new", "bestseller"],
+    "is_featured": false
   },
   {
-    "id": 9,
-    "name": "Sports Shorts",
-    "price": 22.5,
-    "stock": 10,
-    "image_url": "/static/images/shorts.jpg",
-    "description": "High quality and stylish product for everyday use.",
-    "discount_price": 19.12,
-    "category": "Apparel",
-    "brand": "GenericBrand",
-    "color": "Sports",
-    "size": [
-      "One Size"
-    ],
-    "material": "Mixed",
-    "rating": 4.5,
-    "reviews": 20,
-    "additional_images": [
-      "https://your-bucket-name.s3.amazonaws.com/images/products/sports-shorts-1.jpg",
-      "https://your-bucket-name.s3.amazonaws.com/images/products/sports-shorts-2.jpg"
-    ],
-    "specifications": {
-      "wash_care": "Hand wash recommended",
-      "fit": "Standard",
-      "sleeve": "N/A",
-      "neck": "N/A"
-    },
-    "shipping_info": {
-      "delivery_time": "3-5 business days",
-      "shipping_charge": "Free"
-    },
-    "return_policy": "10-day return policy",
-    "warranty": "1 year limited warranty",
-    "available": true,
-    "tags": [
-      "new",
-      "bestseller"
-    ]
+  "id": 9,
+  "name": "Sports Shorts",
+  "price": 22.5,
+  "stock": 10,
+  "image_url": "/static/images/shorts.jpg",
+  "description": "High quality and stylish product for everyday use.",
+  "discount_price": 19.12,
+  "category": "Apparel",
+  "brand": "GenericBrand",
+  "color": "Sports",
+  "size": ["One Size"],
+  "material": "Mixed",
+  "rating": 4.5,
+  "reviews": 20,
+  "specifications": {
+    "wash_care": "Hand wash recommended",
+    "fit": "Standard",
+    "sleeve": "N/A",
+    "neck": "N/A"
   },
-  {
-    "id": 10,
-    "name": "Denim Jacket",
-    "price": 79.99,
-    "stock": 10,
-    "image_url": "/static/images/denim.jpg",
-    "description": "High quality and stylish product for everyday use.",
-    "discount_price": 67.99,
-    "category": "Apparel",
-    "brand": "GenericBrand",
-    "color": "Denim",
-    "size": [
-      "One Size"
-    ],
-    "material": "Mixed",
-    "rating": 4.5,
-    "reviews": 20,
-    "additional_images": [
-      "https://your-bucket-name.s3.amazonaws.com/images/products/denim-jacket-1.jpg",
-      "https://your-bucket-name.s3.amazonaws.com/images/products/denim-jacket-2.jpg"
-    ],
-    "specifications": {
-      "wash_care": "Hand wash recommended",
-      "fit": "Standard",
-      "sleeve": "N/A",
-      "neck": "N/A"
-    },
-    "shipping_info": {
-      "delivery_time": "3-5 business days",
-      "shipping_charge": "Free"
-    },
-    "return_policy": "10-day return policy",
-    "warranty": "1 year limited warranty",
-    "available": true,
-    "tags": [
-      "new",
-      "bestseller"
-    ]
+  "shipping_info": {
+    "delivery_time": "3-5 business days",
+    "shipping_charge": "Free"
   },
-  {
-    "id": 11,
-    "name": "Fitness Tracker",
-    "price": 99.99,
-    "stock": 10,
-    "image_url": "/static/images/tracker.jpg",
-    "description": "High quality and stylish product for everyday use.",
-    "discount_price": 84.99,
-    "category": "Accessories",
-    "brand": "GenericBrand",
-    "color": "Fitness",
-    "size": [
-      "One Size"
-    ],
-    "material": "Mixed",
-    "rating": 4.5,
-    "reviews": 20,
-    "additional_images": [
-      "https://your-bucket-name.s3.amazonaws.com/images/products/fitness-tracker-1.jpg",
-      "https://your-bucket-name.s3.amazonaws.com/images/products/fitness-tracker-2.jpg"
-    ],
-    "specifications": {
-      "wash_care": "Hand wash recommended",
-      "fit": "Standard",
-      "sleeve": "N/A",
-      "neck": "N/A"
-    },
-    "shipping_info": {
-      "delivery_time": "3-5 business days",
-      "shipping_charge": "Free"
-    },
-    "return_policy": "10-day return policy",
-    "warranty": "1 year limited warranty",
-    "available": true,
-    "tags": [
-      "new",
-      "bestseller"
-    ]
+  "return_policy": "10-day return policy",
+  "warranty": "1 year limited warranty",
+  "available": true,
+  "tags": ["new", "bestseller"],
+  "is_featured": false
+},
+{
+  "id": 10,
+  "name": "Denim Jacket",
+  "price": 79.99,
+  "stock": 10,
+  "image_url": "/static/images/denim.jpg",
+  "description": "High quality and stylish product for everyday use.",
+  "discount_price": 67.99,
+  "category": "Apparel",
+  "brand": "GenericBrand",
+  "color": "Denim",
+  "size": ["One Size"],
+  "material": "Mixed",
+  "rating": 4.5,
+  "reviews": 20,
+  "specifications": {
+    "wash_care": "Hand wash recommended",
+    "fit": "Standard",
+    "sleeve": "N/A",
+    "neck": "N/A"
   },
-  {
-    "id": 12,
-    "name": "Bluetooth Earbuds",
-    "price": 45.0,
-    "stock": 10,
-    "image_url": "/static/images/bluetooth.jpg",
-    "description": "High quality and stylish product for everyday use.",
-    "discount_price": 38.25,
-    "category": "Accessories",
-    "brand": "GenericBrand",
-    "color": "Bluetooth",
-    "size": [
-      "One Size"
-    ],
-    "material": "Mixed",
-    "rating": 4.5,
-    "reviews": 20,
-    "additional_images": [
-      "https://your-bucket-name.s3.amazonaws.com/images/products/bluetooth-earbuds-1.jpg",
-      "https://your-bucket-name.s3.amazonaws.com/images/products/bluetooth-earbuds-2.jpg"
-    ],
-    "specifications": {
-      "wash_care": "Hand wash recommended",
-      "fit": "Standard",
-      "sleeve": "N/A",
-      "neck": "N/A"
-    },
-    "shipping_info": {
-      "delivery_time": "3-5 business days",
-      "shipping_charge": "Free"
-    },
-    "return_policy": "10-day return policy",
-    "warranty": "1 year limited warranty",
-    "available": true,
-    "tags": [
-      "new",
-      "bestseller"
-    ]
+  "shipping_info": {
+    "delivery_time": "3-5 business days",
+    "shipping_charge": "Free"
   },
-  {
-    "id": 13,
-    "name": "Graphic Tee",
-    "price": 25.0,
-    "stock": 15,
-    "image_url": "/static/images/graphic.jpg",
-    "description": "Trendy graphic tee perfect for casual wear.",
-    "discount_price": 20.99,
-    "category": "Apparel",
-    "brand": "UrbanStyle",
-    "color": "White",
-    "size": ["S", "M", "L", "XL"],
-    "material": "Cotton",
-    "rating": 4.2,
-    "reviews": 18,
-    "additional_images": [],
-    "specifications": {
-      "wash_care": "Machine wash",
-      "fit": "Slim",
-      "sleeve": "Short",
-      "neck": "Crew"
-    },
-    "shipping_info": {
-      "delivery_time": "2-4 business days",
-      "shipping_charge": "Free"
-    },
-    "return_policy": "7-day return policy",
-    "warranty": "No warranty",
-    "available": true,
-    "tags": ["new", "trending"]
+  "return_policy": "10-day return policy",
+  "warranty": "1 year limited warranty",
+  "available": true,
+  "tags": ["new", "bestseller"],
+  "is_featured": false
+},
+{
+  "id": 11,
+  "name": "Fitness Tracker",
+  "price": 99.99,
+  "stock": 10,
+  "image_url": "/static/images/tracker.jpg",
+  "description": "High quality and stylish product for everyday use.",
+  "discount_price": 84.99,
+  "category": "Accessories",
+  "brand": "GenericBrand",
+  "color": "Fitness",
+  "size": ["One Size"],
+  "material": "Mixed",
+  "rating": 4.5,
+  "reviews": 20,
+  "specifications": {
+    "wash_care": "Hand wash recommended",
+    "fit": "Standard",
+    "sleeve": "N/A",
+    "neck": "N/A"
   },
-  {
-    "id": 14,
-    "name": "Formal Shoes",
-    "price": 69.99,
-    "stock": 8,
-   "image_url": "/static/images/shoes.jpg",
-    "description": "Elegant formal shoes for business attire.",
-    "discount_price": 59.99,
-    "category": "Footwear",
-    "brand": "LeatherWalk",
-    "color": "Brown",
-    "size": ["7", "8", "9", "10"],
-    "material": "Leather",
-    "rating": 4.3,
-    "reviews": 30,
-    "additional_images": [],
-    "specifications": {
-      "wash_care": "Clean with soft cloth",
-      "fit": "Regular",
-      "sleeve": "N/A",
-      "neck": "N/A"
-    },
-    "shipping_info": {
-      "delivery_time": "4-6 business days",
-      "shipping_charge": "Free"
-    },
-    "return_policy": "15-day return policy",
-    "warranty": "6 months manufacturer warranty",
-    "available": true,
-    "tags": ["formal", "business"]
+  "shipping_info": {
+    "delivery_time": "3-5 business days",
+    "shipping_charge": "Free"
   },
-  {
-    "id": 15,
-    "name": "Wireless Mouse",
-    "price": 29.99,
-    "stock": 25,
-    "image_url": "/static/images/mouse.jpg",
-    "description": "Ergonomic wireless mouse with fast response time.",
-    "discount_price": 24.99,
-    "category": "Electronics",
-    "brand": "TechPro",
-    "color": "Black",
-    "size": ["One Size"],
-    "material": "Plastic",
-    "rating": 4.7,
-    "reviews": 50,
-    "additional_images": [],
-    "specifications": {
-      "wash_care": "N/A",
-      "fit": "N/A",
-      "sleeve": "N/A",
-      "neck": "N/A"
-    },
-    "shipping_info": {
-      "delivery_time": "2-3 business days",
-      "shipping_charge": "Free"
-    },
-    "return_policy": "10-day return policy",
-    "warranty": "1 year warranty",
-    "available": true,
-    "tags": ["electronics", "gadgets"]
+  "return_policy": "10-day return policy",
+  "warranty": "1 year limited warranty",
+  "available": true,
+  "tags": ["new", "bestseller"],
+  "is_featured": false
+},
+{
+  "id": 12,
+  "name": "Bluetooth Earbuds",
+  "price": 45.0,
+  "stock": 10,
+  "image_url": "/static/images/bluetooth.jpg",
+  "description": "High quality and stylish product for everyday use.",
+  "discount_price": 38.25,
+  "category": "Accessories",
+  "brand": "GenericBrand",
+  "color": "Bluetooth",
+  "size": ["One Size"],
+  "material": "Mixed",
+  "rating": 4.5,
+  "reviews": 20,
+  "specifications": {
+    "wash_care": "Hand wash recommended",
+    "fit": "Standard",
+    "sleeve": "N/A",
+    "neck": "N/A"
   },
-  {
-    "id": 16,
-    "name": "Yoga Mat",
-    "price": 34.99,
-    "stock": 12,
-    "image_url": "/static/images/mat.jpg",
-    "description": "Anti-slip yoga mat with extra cushioning.",
-    "discount_price": 29.99,
-    "category": "Fitness",
-    "brand": "FitGear",
-    "color": "Green",
-    "size": ["One Size"],
-    "material": "Rubber",
-    "rating": 4.4,
-    "reviews": 22,
-    "additional_images": [],
-    "specifications": {
-      "wash_care": "Wipe clean with damp cloth",
-      "fit": "N/A",
-      "sleeve": "N/A",
-      "neck": "N/A"
-    },
-    "shipping_info": {
-      "delivery_time": "3-5 business days",
-      "shipping_charge": "Free"
-    },
-    "return_policy": "7-day return policy",
-    "warranty": "6 months warranty",
-    "available": true,
-    "tags": ["fitness", "home"]
+  "shipping_info": {
+    "delivery_time": "3-5 business days",
+    "shipping_charge": "Free"
   },
-  {
-    "id": 17,
-    "name": "Smartphone Tripod",
-    "price": 18.99,
-    "stock": 20,
-   "image_url": "/static/images/tripad.jpg",
-    "description": "Compact and adjustable tripod stand for smartphones.",
-    "discount_price": 15.99,
-    "category": "Electronics",
-    "brand": "ClickPro",
-    "color": "Black",
-    "size": ["One Size"],
-    "material": "Aluminum",
-    "rating": 4.3,
-    "reviews": 19,
-    "additional_images": [],
-    "specifications": {
-      "wash_care": "Wipe clean",
-      "fit": "N/A",
-      "sleeve": "N/A",
-      "neck": "N/A"
-    },
-    "shipping_info": {
-      "delivery_time": "3-4 business days",
-      "shipping_charge": "Free"
-    },
-    "return_policy": "10-day return policy",
-    "warranty": "1 year warranty",
-    "available": true,
-    "tags": ["photography", "tech"]
+  "return_policy": "10-day return policy",
+  "warranty": "1 year limited warranty",
+  "available": true,
+  "tags": ["new", "bestseller"],
+  "is_featured": false
+},
+{
+  "id": 13,
+  "name": "Graphic Tee",
+  "price": 25.0,
+  "stock": 15,
+  "image_url": "/static/images/graphic.jpg",
+  "description": "Trendy graphic tee perfect for casual wear.",
+  "discount_price": 20.99,
+  "category": "Apparel",
+  "brand": "UrbanStyle",
+  "color": "White",
+  "size": ["S", "M", "L", "XL"],
+  "material": "Cotton",
+  "rating": 4.2,
+  "reviews": 18,
+  "specifications": {
+    "wash_care": "Machine wash",
+    "fit": "Slim",
+    "sleeve": "Short",
+    "neck": "Crew"
   },
-  {
-    "id": 18,
-    "name": "Laptop Sleeve",
-    "price": 22.99,
-    "stock": 14,
-    "image_url": "/static/images/sleeve.jpg",
-    "description": "Protective laptop sleeve with padded interior.",
-    "discount_price": 19.49,
-    "category": "Accessories",
-    "brand": "SafeGear",
-    "color": "Grey",
-    "size": ["13 inch", "15 inch"],
-    "material": "Neoprene",
-    "rating": 4.6,
-    "reviews": 34,
-    "additional_images": [],
-    "specifications": {
-      "wash_care": "Hand wash only",
-      "fit": "N/A",
-      "sleeve": "N/A",
-      "neck": "N/A"
-    },
-    "shipping_info": {
-      "delivery_time": "2-4 business days",
-      "shipping_charge": "Free"
-    },
-    "return_policy": "7-day return policy",
-    "warranty": "6 months",
-    "available": true,
-    "tags": ["laptop", "protective"]
+  "shipping_info": {
+    "delivery_time": "2-4 business days",
+    "shipping_charge": "Free"
   },
-  {
-    "id": 19,
-    "name": "Silk Scarf",
-    "price": 19.99,
-    "stock": 10,
-   "image_url": "/static/images/scarf.jpg",
-    "description": "Elegant silk scarf for special occasions.",
-    "discount_price": 16.49,
-    "category": "Accessories",
-    "brand": "SilkWeave",
-    "color": "Pink",
-    "size": ["One Size"],
-    "material": "Silk",
-    "rating": 4.2,
-    "reviews": 12,
-    "additional_images": [],
-    "specifications": {
-      "wash_care": "Dry clean only",
-      "fit": "N/A",
-      "sleeve": "N/A",
-      "neck": "N/A"
-    },
-    "shipping_info": {
-      "delivery_time": "3-5 business days",
-      "shipping_charge": "Free"
-    },
-    "return_policy": "10-day return policy",
-    "warranty": "No warranty",
-    "available": true,
-    "tags": ["elegant", "silk"]
+  "return_policy": "7-day return policy",
+  "warranty": "No warranty",
+  "available": true,
+  "tags": ["new", "trending"],
+  "is_featured": false
+},
+{
+  "id": 14,
+  "name": "Formal Shoes",
+  "price": 69.99,
+  "stock": 8,
+  "image_url": "/static/images/shoes.jpg",
+  "description": "Elegant formal shoes for business attire.",
+  "discount_price": 59.99,
+  "category": "Footwear",
+  "brand": "LeatherWalk",
+  "color": "Brown",
+  "size": ["7", "8", "9", "10"],
+  "material": "Leather",
+  "rating": 4.3,
+  "reviews": 30,
+  "specifications": {
+    "wash_care": "Clean with soft cloth",
+    "fit": "Regular",
+    "sleeve": "N/A",
+    "neck": "N/A"
   },
-  {
-    "id": 20,
-    "name": "Digital Alarm Clock",
-    "price": 27.5,
-    "stock": 18,
-    "image_url": "/static/images/clock.jpg",
-    "description": "Minimalist LED alarm clock with night mode.",
-    "discount_price": 22.99,
-    "category": "Electronics",
-    "brand": "TimeTech",
-    "color": "White",
-    "size": ["One Size"],
-    "material": "Plastic",
-    "rating": 4.4,
-    "reviews": 27,
-    "additional_images": [],
-    "specifications": {
-      "wash_care": "Wipe clean",
-      "fit": "N/A",
-      "sleeve": "N/A",
-      "neck": "N/A"
-    },
-    "shipping_info": {
-      "delivery_time": "2-3 business days",
-      "shipping_charge": "Free"
-    },
-    "return_policy": "7-day return policy",
-    "warranty": "1 year limited warranty",
-    "available": true,
-    "tags": ["minimalist", "clock"]
-  }
+  "shipping_info": {
+    "delivery_time": "4-6 business days",
+    "shipping_charge": "Free"
+  },
+  "return_policy": "15-day return policy",
+  "warranty": "6 months manufacturer warranty",
+  "available": true,
+  "tags": ["formal", "business"],
+  "is_featured": false
+},
+{
+  "id": 15,
+  "name": "Wireless Mouse",
+  "price": 29.99,
+  "stock": 25,
+  "image_url": "/static/images/mouse.jpg",
+  "description": "Ergonomic wireless mouse with fast response time.",
+  "discount_price": 24.99,
+  "category": "Electronics",
+  "brand": "TechPro",
+  "color": "Black",
+  "size": ["One Size"],
+  "material": "Plastic",
+  "rating": 4.7,
+  "reviews": 50,
+  "specifications": {
+    "wash_care": "N/A",
+    "fit": "N/A",
+    "sleeve": "N/A",
+    "neck": "N/A"
+  },
+  "shipping_info": {
+    "delivery_time": "2-3 business days",
+    "shipping_charge": "Free"
+  },
+  "return_policy": "10-day return policy",
+  "warranty": "1 year warranty",
+  "available": true,
+  "tags": ["electronics", "gadgets"],
+  "is_featured": false
+},
+{
+  "id": 16,
+  "name": "Yoga Mat",
+  "price": 34.99,
+  "stock": 12,
+  "image_url": "/static/images/mat.jpg",
+  "description": "Anti-slip yoga mat with extra cushioning.",
+  "discount_price": 29.99,
+  "category": "Fitness",
+  "brand": "FitGear",
+  "color": "Green",
+  "size": ["One Size"],
+  "material": "Rubber",
+  "rating": 4.4,
+  "reviews": 22,
+  "specifications": {
+    "wash_care": "Wipe clean with damp cloth",
+    "fit": "N/A",
+    "sleeve": "N/A",
+    "neck": "N/A"
+  },
+  "shipping_info": {
+    "delivery_time": "3-5 business days",
+    "shipping_charge": "Free"
+  },
+  "return_policy": "7-day return policy",
+  "warranty": "6 months warranty",
+  "available": true,
+  "tags": ["fitness", "home"],
+  "is_featured": false
+},
+{
+  "id": 17,
+  "name": "Smartphone Tripod",
+  "price": 18.99,
+  "stock": 20,
+  "image_url": "/static/images/tripad.jpg",
+  "description": "Compact and adjustable tripod stand for smartphones.",
+  "discount_price": 15.99,
+  "category": "Electronics",
+  "brand": "ClickPro",
+  "color": "Black",
+  "size": ["One Size"],
+  "material": "Aluminum",
+  "rating": 4.3,
+  "reviews": 19,
+  "specifications": {
+    "wash_care": "Wipe clean",
+    "fit": "N/A",
+    "sleeve": "N/A",
+    "neck": "N/A"
+  },
+  "shipping_info": {
+    "delivery_time": "3-4 business days",
+    "shipping_charge": "Free"
+  },
+  "return_policy": "10-day return policy",
+  "warranty": "1 year warranty",
+  "available": true,
+  "tags": ["photography", "tech"],
+  "is_featured": false
+},
+{
+  "id": 18,
+  "name": "Laptop Sleeve",
+  "price": 22.99,
+  "stock": 14,
+  "image_url": "/static/images/sleeve.jpg",
+  "description": "Protective laptop sleeve with padded interior.",
+  "discount_price": 19.49,
+  "category": "Accessories",
+  "brand": "SafeGear",
+  "color": "Grey",
+  "size": ["13 inch", "15 inch"],
+  "material": "Neoprene",
+  "rating": 4.6,
+  "reviews": 34,
+  "specifications": {
+    "wash_care": "Hand wash only",
+    "fit": "N/A",
+    "sleeve": "N/A",
+    "neck": "N/A"
+  },
+  "shipping_info": {
+    "delivery_time": "2-4 business days",
+    "shipping_charge": "Free"
+  },
+  "return_policy": "7-day return policy",
+  "warranty": "6 months",
+  "available": true,
+  "tags": ["laptop", "protective"],
+  "is_featured": false
+},
+{
+  "id": 19,
+  "name": "Silk Scarf",
+  "price": 19.99,
+  "stock": 10,
+  "image_url": "/static/images/scarf.jpg",
+  "description": "Elegant silk scarf for special occasions.",
+  "discount_price": 16.49,
+  "category": "Accessories",
+  "brand": "SilkWeave",
+  "color": "Pink",
+  "size": ["One Size"],
+  "material": "Silk",
+  "rating": 4.2,
+  "reviews": 12,
+  "specifications": {
+    "wash_care": "Dry clean only",
+    "fit": "N/A",
+    "sleeve": "N/A",
+    "neck": "N/A"
+  },
+  "shipping_info": {
+    "delivery_time": "3-5 business days",
+    "shipping_charge": "Free"
+  },
+  "return_policy": "10-day return policy",
+  "warranty": "No warranty",
+  "available": true,
+  "tags": ["elegant", "silk"],
+  "is_featured": false
+},
+{
+  "id": 20,
+  "name": "Digital Alarm Clock",
+  "price": 27.5,
+  "stock": 18,
+  "image_url": "/static/images/clock.jpg",
+  "description": "Minimalist LED alarm clock with night mode.",
+  "discount_price": 22.99,
+  "category": "Electronics",
+  "brand": "TimeTech",
+  "color": "White",
+  "size": ["One Size"],
+  "material": "Plastic",
+  "rating": 4.4,
+  "reviews": 27,
+  "specifications": {
+    "wash_care": "Wipe clean",
+    "fit": "N/A",
+    "sleeve": "N/A",
+    "neck": "N/A"
+  },
+  "shipping_info": {
+    "delivery_time": "2-3 business days",
+    "shipping_charge": "Free"
+  },
+  "return_policy": "7-day return policy",
+  "warranty": "1 year limited warranty",
+  "available": true,
+  "tags": ["minimalist", "clock"],
+  "is_featured": false
+}
 
 ]
+
+
+  

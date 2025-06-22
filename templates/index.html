@@ -10,8 +10,7 @@
         <div class="hero-content">
             <h1>Welcome to ShopZone</h1>
             <p>Discover amazing products at unbeatable prices</p>
-          <a href="{{ url_for('products.products') }}" class="btn btn-primary">Shop Now</a>
-
+            <a href="{{ url_for('products.products') }}" class="btn btn-primary">Shop Now</a>
         </div>
     </section>
 
@@ -53,8 +52,4 @@
             <p>100% secure payment</p>
         </div>
     </section>
-    <form action="{{ url_for('cart.add_to_cart', product_id=1) }}" method="POST">
-    <button type="submit">Add to Cart</button>
-</form>
-
 {% endblock %}

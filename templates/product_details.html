@@ -13,13 +13,6 @@
         <div class="main-image">
             <img src="{{ product.image_url }}" alt="{{ product.name }}">
         </div>
-        {% if product.additional_images %}
-        <div class="thumbnail-images">
-            {% for image in product.additional_images %}
-            <img src="{{ image }}" alt="Additional image {{ loop.index }}">
-            {% endfor %}
-        </div>
-        {% endif %}
     </div>
 
     <div class="product-info">
@@ -89,7 +82,6 @@
         {% endif %}
 
         {% if product.stock > 0 %}
-        <!-- ✅ Use form to trigger POST for adding to cart -->
         <form class="add-to-cart-form" action="{{ url_for('cart.add_to_cart', product_id=product.id) }}" method="POST">
             <div class="quantity-selector">
                 <label for="quantity">Quantity:</label>

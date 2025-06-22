@@ -1,8 +1,8 @@
-"""Add user_type to User model
+"""Initial migration with is_featured
 
-Revision ID: 14de67a37508
+Revision ID: 917bae4088a1
 Revises: 
-Create Date: 2025-06-20 15:25:30.271473
+Create Date: 2025-06-22 13:08:15.031739
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '14de67a37508'
+revision = '917bae4088a1'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -39,6 +39,7 @@ def upgrade():
     sa.Column('return_policy', sa.String(length=255), nullable=True),
     sa.Column('warranty', sa.String(length=255), nullable=True),
     sa.Column('available', sa.Boolean(), nullable=True),
+    sa.Column('is_featured', sa.Boolean(), nullable=True),
     sa.Column('tags', sa.PickleType(), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=False),
     sa.PrimaryKeyConstraint('id')
